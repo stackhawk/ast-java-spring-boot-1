@@ -1,4 +1,4 @@
-package com.khoubyari.example.service;
+package com.example.ast.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -16,7 +16,7 @@
 	</parent>
 
 	<properties>
-		<start-class>com.khoubyari.example.Application</start-class>
+		<start-class>com.example.ast.Application</start-class>
 	</properties>
 
 	<dependencies>

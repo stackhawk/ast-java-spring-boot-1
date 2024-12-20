@@ -1,13 +1,13 @@
-package com.khoubyari.example.test;
+package com.example.ast.test;
 
 /**
  * Uses JsonPath: http://goo.gl/nwXpb, Hamcrest and MockMVC
  */
 
+import com.example.ast.annotations.RequestMappingAnnotationController;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.khoubyari.example.Application;
-import com.khoubyari.example.api.rest.HotelController;
-import com.khoubyari.example.domain.Hotel;
+import com.example.ast.Application;
+import com.example.ast.domain.Hotel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +42,7 @@ public class HotelControllerTest {
     private static final String RESOURCE_LOCATION_PATTERN = "http://localhost/example/v1/hotels/[0-9]+";
 
     @InjectMocks
-    HotelController controller;
+    RequestMappingAnnotationController controller;
 
     @Autowired
     WebApplicationContext context;

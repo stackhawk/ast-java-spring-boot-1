@@ -1,4 +1,4 @@
-package com.khoubyari.example.api.rest.docs;
+package com.example.ast.api.rest.docs;
 
 import com.google.common.base.Predicates;
 
@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-@ComponentScan("com.khoubyari.example.api.rest")
+@ComponentScan("com.example.ast")
 public class SwaggerConfig {
 
 
@@ -41,7 +41,6 @@ public class SwaggerConfig {
                 .license("Siamak")
                 .licenseUrl("")
                 .version("1.0")
- //               .contact(new Contact("siamak"))
                 .build();
     }
 

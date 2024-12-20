@@ -1,7 +1,7 @@
-package com.khoubyari.example.service;
+package com.example.ast.service;
 
-import com.khoubyari.example.domain.Hotel;
-import com.khoubyari.example.dao.jpa.HotelRepository;
+import com.example.ast.domain.Hotel;
+import com.example.ast.dao.jpa.HotelRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
