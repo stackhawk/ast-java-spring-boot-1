@@ -78,6 +78,18 @@ public class Hotel {
         this.city = city;
     }
 
+    @OneToOne
+    @JoinColumn(name = "building_id")
+    private Building building;
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
     @Override
     public String toString() {
         return "Hotel {" +

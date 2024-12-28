@@ -4,7 +4,7 @@ package com.example.ast.test;
  * Uses JsonPath: http://goo.gl/nwXpb, Hamcrest and MockMVC
  */
 
-import com.example.ast.annotations.RequestMappingAnnotationController;
+import com.example.ast.annotations.HotelController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.example.ast.Application;
 import com.example.ast.domain.Hotel;
@@ -42,7 +42,7 @@ public class HotelControllerTest {
     private static final String RESOURCE_LOCATION_PATTERN = "http://localhost/example/v1/hotels/[0-9]+";
 
     @InjectMocks
-    RequestMappingAnnotationController controller;
+    HotelController controller;
 
     @Autowired
     WebApplicationContext context;

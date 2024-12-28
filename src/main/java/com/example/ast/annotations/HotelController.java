@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping(value = "/example/v1/hotels")
 @Api(tags = {"hotels"})
-public class RequestMappingAnnotationController extends AbstractRestHandler {
+public class HotelController extends AbstractRestHandler {
 
     @Autowired
     private HotelService hotelService;
