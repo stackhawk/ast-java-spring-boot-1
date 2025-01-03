@@ -2,6 +2,7 @@ package com.example.ast.domain;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.Comparator;
 
 /*
  * a simple domain entity doubling as a DTO
@@ -10,7 +11,7 @@ import javax.xml.bind.annotation.*;
 @Table(name = "hotel")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Hotel {
+public class Hotel implements Comparable<Hotel>{
 
     @Id
     @GeneratedValue()
@@ -27,6 +28,10 @@ public class Hotel {
 
     @Column()
     private int rating;
+
+    @Column()
+    @Enumerated(EnumType.STRING)
+    private Continent continent;
 
     public Hotel() {
     }
@@ -78,6 +83,14 @@ public class Hotel {
         this.city = city;
     }
 
+    public Continent getContinent() {
+        return continent;
+    }
+
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
+
     @OneToOne
     @JoinColumn(name = "building_id")
     private Building building;
@@ -99,5 +112,14 @@ public class Hotel {
                 ", city='" + city + '\'' +
                 ", rating=" + rating +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Hotel other) {
+        Comparator<Hotel> comparator = Comparator.comparing(Hotel::getName)
+                .thenComparing(Hotel::getContinent)
+                .thenComparing(Hotel::getCity)
+                .thenComparing(Hotel::getRating);
+        return comparator.compare(this, other);
     }
 }
